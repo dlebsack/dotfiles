@@ -46,11 +46,19 @@ yabai -m config auto_balance               off
 				# external_bar               all:0:0
 
 # Exclude problematic apps from being managed:
-yabai -m rule --add app="^(Software Update|System Preferences|System Settings|zoom.us|App Store|Steam|Activity Monitor)$" manage=off
+yabai -m rule --add app="^(Software Update|System Preferences|System Settings|zoom.us|App Store|Steam|Activity Monitor|Enpass)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 yabai -m rule --add app="^Slack*" title="^Huddle*" manage=off
 yabai -m rule --add app="^Studio*" title="Connection Manager" manage=off
-yabai -m rule --add app="^zoom.us" space=5
+yabai -m rule --add app="^enpass*" manage=off
+yabai -m rule --add app="^wombat*" manage=off
+yabai -m rule --add app="^Enpass*" manage=off
+yabai -m rule --add app="^Wombat*" manage=off
+yabai -m rule --add title="^enpass*" manage=off
+yabai -m rule --add title="^Enpass*" manage=off
+yabai -m rule --add app="^*Opera" space=2
+yabai -m rule --add app="^Studio 3T*" space=3
 yabai -m rule --add app="^Slack*" space=4
+yabai -m rule --add app="^zoom.us" space=5
