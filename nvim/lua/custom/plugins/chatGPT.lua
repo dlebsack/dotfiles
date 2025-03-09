@@ -3,6 +3,9 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("chatgpt").setup({
+			openai_params = {
+				model = "gpt-4-1106-preview",
+			},
 			edit_with_instructions = {
 				keymaps = {
 					accept = "<C-a>",
