@@ -78,6 +78,10 @@ alias cw-dfw-1='ssh root@cw-dfw-1.dialsource.com'
 alias development="gcloud container clusters get-credentials conquer-development --region us-east4 --project dialsource-213300"
 alias staging="gcloud container clusters get-credentials conquer-staging --region us-east4 --project dialsource-213300"
 alias production='read "brave?Are you sure you want to connect to production? [y/N]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
+alias ci='gcloud container clusters get-credentials ci-cd --region us-east4 --project dialsource-213300'
+
+# git
+alias gtag='git rev-parse --short=10 HEAD'
 
 # autocomplete for gcloud
 # # The next line updates PATH for the Google Cloud SDK.
@@ -107,3 +111,6 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 # }
 
 export PATH=$PATH:/Users/david/.spicetify
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/david/.lmstudio/bin"
