@@ -55,6 +55,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
+--
 local servers = {
 	-- clangd = {},
 	gopls = {
@@ -73,7 +74,10 @@ local servers = {
 			},
 		},
 	},
-	-- pyright = {},
+	pyright = {
+		cmd = { "pyright-langserver", "--stdio" },
+		filetypes = { "python" },
+	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -88,6 +92,19 @@ local servers = {
 		filetypes = { "apex" },
 		cmd = { 'java', '-jar', '/Users/lebsack/Downloads/apex-jorje-lsp.jar' },
 	},
+	kotlin_language_server = {
+		cmd = { "kotlin-language-server" },
+		settings = {
+			kotlin = {
+				compiler = {
+					jvm = {
+						target = "21"
+					}
+				}
+			}
+		}
+
+	}
 }
 -- Setup neovim lua configuration
 require('neodev').setup()
