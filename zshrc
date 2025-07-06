@@ -29,8 +29,10 @@ SPACESHIP_DOCKER_COMPOSE_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_ASYNC=true
 SPACESHIP_KUBECTL_CONTEXT_COLOR_GROUPS=(
+	blue neo
     red production
     yellow staging
+    green dev
 )
 
 # exports
@@ -79,6 +81,7 @@ alias development="gcloud container clusters get-credentials conquer-development
 alias staging="gcloud container clusters get-credentials conquer-staging --region us-east4 --project dialsource-213300"
 alias production='read "brave?Are you sure you want to connect to production? [y/N]"; if [[ "$brave" =~ ^[Yy]$ ]]; then gcloud beta container clusters get-credentials production --region us-east4 --project dialsource-213300; fi'
 alias ci='gcloud container clusters get-credentials ci-cd --region us-east4 --project dialsource-213300'
+# alias neo='gcloud container clusters get-credentials neolove-production --zone us-east1 --project metal-air-453501-j8'
 
 # git
 alias gtag='git rev-parse --short=10 HEAD'
@@ -114,3 +117,13 @@ export PATH=$PATH:/Users/david/.spicetify
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/david/.lmstudio/bin"
+
+alias k=`kubectl`
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# neosource
+export NEOSOURCE_ROOT=/Users/david/src/neo
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

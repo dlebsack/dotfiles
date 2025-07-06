@@ -1,0 +1,21 @@
+set tabstop = 4
+set shiftwidth = 4
+set relativenumber
+set highlightedyank
+set notimeout
+set which-key
+set NERDTree
+ " Unmap space in normal and visual mode
+nnoremap <Space> <Nop>
+vnoremap <Space> <Nop>
+
+" Set space as leader key
+let mapleader = " "
+nnoremap gr :action ShowUsages<CR>
+" " Actions
+map <Leader>am <action>(ShowIntentionActions)
+map <Leader>sg <action>(com.mituuz.fuzzier.FuzzyGrep)
+vnoremap gc :action CommentByLineComment<CR>
+map <leader>x :NERDTreeToggle<CR>
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
